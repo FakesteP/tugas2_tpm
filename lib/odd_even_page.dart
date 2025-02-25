@@ -20,14 +20,13 @@ class _OddEvenPageState extends State<OddEvenPage> {
         return;
       }
 
-      double? number = double.tryParse(_numberController.text);
+      int? number = int.tryParse(_numberController.text);
       if (number == null) {
-        _errorMessage = 'Masukkan angka yang valid!';
+        _errorMessage = 'Masukkan angka bulat yang valid!';
         return;
       }
 
-      int integerPart = number.floor();
-      _result = (integerPart % 2 == 0) ? 'Genap' : 'Ganjil';
+      _result = (number % 2 == 0) ? 'Genap' : 'Ganjil';
     });
   }
 
